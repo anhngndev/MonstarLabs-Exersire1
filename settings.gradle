@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "ML JVC"
+rootProject.name = "ML JVC - Kotlin"
