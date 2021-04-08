@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="RtlCompat">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="188dp"
+            android:background="@drawable/custom_tab_bar">
+
+            <TextView
+                android:id="@+id/title_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/margin3"
+                android:layout_marginTop="@dimen/margin4"
+                android:gravity="center_vertical"
+                android:text="Student Manager"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size3"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat,RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_below="@id/title_filter"
+                android:layout_marginHorizontal="@dimen/margin3"
+                android:layout_marginTop="@dimen/margin4"
+                android:background="@drawable/custom_edit_text_search"
+                android:hint="@string/description_wait_screen4"
+                android:paddingStart="@dimen/margin9"
+                android:textCursorDrawable="@color/blue"
+                android:textSize="@dimen/text_size0" />
+
+            <ImageView
+                android:id="@+id/find"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_below="@id/title_filter"
+                android:layout_marginHorizontal="@dimen/margin3"
+                android:layout_marginTop="@dimen/margin4"
+                android:paddingStart="@dimen/margin2"
+                android:src="@drawable/search_icon_gray"
+                android:textCursorDrawable="@color/blue" />
+
+            <TextView
+                android:id="@+id/sort_by_name"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@+id/search"
+                android:layout_marginStart="@dimen/margin3"
+                android:layout_marginTop="@dimen/margin4"
+                android:background="@drawable/border_white"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/margin2"
+                android:paddingEnd="@dimen/margin4"
+                android:text="@string/full_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size0"
+                app:drawableStartCompat="@drawable/ic_white_filter"
+                tools:ignore="RtlCompat,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/sort_by_born"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@+id/search"
+                android:layout_marginStart="@dimen/margin3"
+                android:layout_marginTop="@dimen/margin4"
+                android:layout_toEndOf="@id/sort_by_name"
+                android:background="@drawable/border_white"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/margin2"
+                android:paddingEnd="@dimen/margin4"
+                android:text="@string/born"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size0"
+                app:drawableStartCompat="@drawable/ic_white_filter"
+                tools:ignore="RtlCompat,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/sort_by_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@+id/search"
+                android:layout_marginStart="@dimen/margin3"
+                android:layout_marginTop="@dimen/margin4"
+
+                android:layout_toEndOf="@id/sort_by_born"
+                android:background="@drawable/border_white"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/margin2"
+                android:paddingEnd="@dimen/margin4"
+                android:text="@string/phone"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size0"
+                app:drawableStartCompat="@drawable/ic_white_filter"
+                tools:ignore="RtlCompat,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/sort_by"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@+id/sort_by_name"
+                android:layout_marginStart="@dimen/margin3"
+                android:layout_marginTop="@dimen/margin2"
+                android:gravity="center_vertical"
+                android:text="normal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size2"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/un_sort"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/sort_by_name"
+                android:layout_marginStart="@dimen/margin1"
+                android:layout_marginTop="@dimen/margin2"
+                android:layout_toEndOf="@id/sort_by"
+                android:padding="@dimen/margin1"
+                android:src="@drawable/white_cancel"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@id/top_bar"
+            android:layout_marginHorizontal="@dimen/margin3"
+            android:layout_marginTop="@dimen/margin1"
+            android:layout_marginBottom="@dimen/margin2" />
+
+
+        <EditText
+            android:id="@+id/add_name"
+            android:layout_width="280dp"
+            android:layout_height="36dp"
+            android:layout_below="@id/recycler_view"
+            android:layout_marginStart="@dimen/margin3"
+            android:layout_marginTop="@dimen/margin2"
+            android:background="@drawable/border_line_white_fill"
+            android:hint="Name"
+            android:paddingStart="@dimen/margin2"
+            android:textCursorDrawable="@color/blue"
+            android:textSize="@dimen/text_size0" />
+
+        <EditText
+            android:id="@+id/add_born"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_below="@id/recycler_view"
+            android:layout_marginHorizontal="@dimen/margin3"
+            android:layout_marginTop="@dimen/margin2"
+            android:layout_toEndOf="@id/add_name"
+            android:background="@drawable/border_line_white_fill"
+            android:hint="Born"
+            android:inputType="number"
+            android:paddingStart="@dimen/margin2"
+            android:textCursorDrawable="@color/blue"
+            android:textSize="@dimen/text_size0" />
+
+        <EditText
+            android:id="@+id/add_phone"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_below="@id/add_name"
+            android:layout_marginHorizontal="@dimen/margin3"
+            android:layout_marginTop="@dimen/margin2"
+            android:background="@drawable/border_line_white_fill"
+            android:hint="@string/phone"
+            android:inputType="number"
+            android:paddingStart="@dimen/margin2"
+            android:textCursorDrawable="@color/blue"
+            android:textSize="@dimen/text_size0" />
+
+        <EditText
+            android:id="@+id/add_major"
+            android:layout_width="match_parent"
+
+            android:layout_height="36dp"
+            android:layout_below="@id/add_phone"
+            android:layout_marginHorizontal="@dimen/margin3"
+            android:layout_marginTop="@dimen/margin2"
+            android:background="@drawable/border_line_white_fill"
+            android:hint="Major"
+            android:paddingStart="@dimen/margin2"
+            android:textCursorDrawable="@color/blue"
+            android:textSize="@dimen/text_size0" />
+
+        <RadioGroup
+            android:id="@+id/tS_group"
+            android:layout_width="332dp"
+            android:layout_height="36dp"
+            android:layout_below="@id/add_major"
+            android:layout_marginStart="@dimen/margin3"
+            android:layout_marginTop="@dimen/margin2"
+            android:hint="Training System"
+            android:orientation="horizontal"
+            android:textCursorDrawable="@color/blue"
+            android:textSize="@dimen/text_size0">
+
+            <RadioButton
+                android:id="@+id/university"
+                android:layout_width="100dp"
+                android:layout_height="36dp"
+                android:background="@drawable/border_line_white_fill"
+                android:text="Dai Hoc" />
+
+            <RadioButton
+                android:id="@+id/college"
+                android:layout_width="100dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="@dimen/margin4"
+                android:background="@drawable/border_line_white_fill"
+                android:text="Cao Dang" />
+        </RadioGroup>
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/add_tS"-->
+        <!--            android:layout_width="332dp"-->
+        <!--            android:layout_height="36dp"-->
+        <!--            android:layout_below="@id/add_major"-->
+        <!--            android:layout_marginStart="@dimen/margin3"-->
+        <!--            android:layout_marginTop="@dimen/margin2"-->
+        <!--            android:background="@drawable/border_line_white_fill"-->
+        <!--            android:hint="Training System"-->
+        <!--            android:paddingStart="@dimen/margin2"-->
+        <!--            android:textCursorDrawable="@color/blue"-->
+        <!--            android:textSize="@dimen/text_size0" />-->
+
+        <ImageView
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_below="@id/add_major"
+            android:layout_marginStart="@dimen/margin2"
+            android:layout_marginTop="@dimen/margin2"
+            android:layout_marginEnd="@dimen/margin3"
+            android:layout_toEndOf="@id/tS_group"
+            android:background="@drawable/border_blue_fill"
+            android:padding="@dimen/margin1"
+            android:src="@drawable/white_add" />
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/hide_keyboard"-->
+        <!--            android:layout_width="@dimen/margin8"-->
+        <!--            android:layout_height="@dimen/margin8"-->
+        <!--            android:layout_marginStart="@dimen/margin2"-->
+        <!--            android:layout_above="@+id/add_born"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:layout_marginEnd="@dimen/margin3"-->
+        <!--            android:background="@drawable/border_blue_fill"-->
+        <!--            android:padding="@dimen/margin1"-->
+        <!--            android:src="@drawable/white_keyboard"-->
+        <!--            android:visibility="invisible"-->
+        <!--            tools:ignore="UnknownIdInLayout" />-->
+
+    </RelativeLayout>
+</RelativeLayout>
